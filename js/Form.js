@@ -25,14 +25,15 @@ class Form {
     this.title.position(width/2,100);
     this.title.html("Car Racing Game");
     this.reset.position(width-100,50);
-    if(gameState == 2){
+    /*if(gameState == 2){
       this.leaderboard.html("Congratulations!");
       this.leaderboard.position(width/2,100);
       console.log("Changed");
-    }
+    }*/
     this.reset.mousePressed(()=>{
       game.update(0);
       player.updateCount(0);
+      Player.updateCarsAtEnd(0);
       player.updateReset();
     });
 
