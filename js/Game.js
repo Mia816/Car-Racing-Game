@@ -40,6 +40,8 @@ class Game {
     form.hide();
     image(track,50,-height*4,width,4500);
     Player.getPlayerInfo();
+    player.getCarsAtEnd();
+
     var displayPositon = 130;
     if(allPlayers != undefined){
       var index = 0;
@@ -67,13 +69,25 @@ class Game {
     drawSprites();
     if (player.distance>4100){
       gameState = 2;
+      player.rank++
+      playerRank = player.rank ;
+
+      Player.updateCarsAtEnd(player.rank);
+
       form.leaderboard.position(width/2-150,100);
       form.leaderboard.html("Congratulations " + player.name);
       form.leaderboard.style("font-size", "50px");
       form.leaderboard.style("background-color", "yellow");
       form.leaderboard.style("padding", "10px");
       console.log(player.name);
+
+
     }
+  }
+
+  end(){
+    p = createElement("h1", playerRank);
+    p.position(width/2-150, 200);
   }
   
 }
