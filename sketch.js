@@ -13,6 +13,8 @@ var cars;
 var car1Image, car2Image, car3Image, car4Image;
 
 var leaderboard;
+var playerRank=0;
+var p;
 
 function preload(){
   backgroundImage = loadImage("Background.jpeg");
@@ -42,5 +44,9 @@ function draw(){
   if(gameState === 1){
     clear();
     game.play();
+  }
+
+  if (gameState ===2){
+    game.end();
   }
 }
